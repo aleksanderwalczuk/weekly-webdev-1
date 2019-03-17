@@ -1,0 +1,17 @@
+{
+  "name": "weekly-webdev-1",
+  "version": "1.0.0",
+  "description": "First project of Weekly webdev challenge - Forms",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weekly",
+    "web",
+    "dev",
+    "challenge"
+  ],
+  "author": "Alexander Walczuk",
+  "license": "ISC"
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms - Weekly Webdev Challengee</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="fontawesome-free-5.7.2-web/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+
+</head>
+
+<body>
+<main>
+    <div class="form-container">
+        <div class="regrister-form">
+            <h2>Regrister Form</h2>
+            <form action="" method="POST">
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="name"><i class="fa fa-user"></i></label>
+                        <input type="text" name="name" id="name" placeholder="Username">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="regrister-pwd"><i class="fa fa-shield-alt"></i></label>
+                        <input type="text" name="regrister-pwd" id="regrister-pwd" placeholder="Password">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="regrister-confirm"><i class="fa fa-user"></i></label>
+                        <input type="text" name="regrister-confirm" id="regrister-confirm"
+                               placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="regrister-email"><i class="fa fa-user"></i></label>
+                        <input type="email" name="regrister-email" id="regrister-email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="location"><i class="fa fa-user"></i></label>
+                        <select name="location" id="location">
+                            <option value="1">Location 1
+                            </option>
+                            <option value="2">Location 2</option>
+                            <option value="3">Location 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                        <div class="terms">
+                            <input type="checkbox" name="terms" id=""><span>I've read and accept the terms of use</span>
+                    </div>
+                </div>
+                <button type="submit"><a href="#">Sign Up</a></button>
+            </form>
+        </div>
+        <div class="email-form">
+            <div class="send-email">
+                <h2>Send Email</h2>
+                <form action="" method="POST">
+
+                    <div class="input-container">
+                        <div class="input-border">
+                            <label for="email-name"><i class="fa fa-user"></i></label>
+                            <input type="text" name="email-name" id="email-name" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-border">
+                            <label for="email-email"><i class="fa fa-user"></i></label>
+                            <input type="email" name="email-email" id="email-email" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <textarea placeholder="Type your message..."></textarea>
+                    <div class="terms">
+                        <input type="checkbox" name="terms"
+                               id="text-area"><span>I've read and accept the terms of use</span>
+                    </div>
+                    <button type="submit">Send Email</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="signin-form">
+            <h2>Sign In Form</h2>
+            <form action="" method="post">
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="sign-login"><i class="fa fa-user"></i></label>
+                        <input type="text" name="sign-login" id="sign-login" placeholder="Username">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="sign-pwd"><i class="fa fa-user"></i></label>
+                        <input type="text" name="sign-pwd" id="sign-pwd" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" name=""><span>Remember me</span>
+                </div>
+                <button type="submit">Sign in</button>
+
+            </form>
+        </div>
+        <div class="recover-form">
+            <h2>Recover Form</h2>
+            <form action="" method="post">
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="sign-login"><i class="fa fa-user"></i></label>
+                        <input type="text" name="sign-login" placeholder="Enter your Email">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="sign-pwd"><i class="fa fa-user"></i></label>
+                        <input type="text" name="sign-pwd" placeholder="Enter your Phone number">
+                    </div>
+                </div>
+                <button type="submit">Send</button>
+                <button disabled="disabled">Done</button>
+            </form>
+        </div>
+        <div class="subscribe-form">
+            <h2>Recover Form</h2>
+            <form action="" method="post">
+                <div class="input-container">
+                    <div class="input-border">
+                        <label for="subscribe-email"><i class="fa fa-user"></i></label>
+                        <input type="text" name="subscribe-email" id="subscribe-email" placeholder="Enter your Email">
+                    </div>
+                </div>
+                <button type="submit">Subscribe</button>
+                <button disabled="disabled">No, Thanks</button>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>
