@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Forms - Weekly Webdev Challengee</title>
     <link rel="stylesheet" href="style.css">
-    <link href="fontawesome-free-5.7.2-web/css/all.css" rel="stylesheet">
+    <link href="node_modules/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--load all styles -->
-
 </head>
-
 <body>
 <main>
     <div class="form-container">
@@ -24,37 +23,41 @@
                 </div>
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="regrister-pwd"><i class="fa fa-shield-alt"></i></label>
+                        <label for="regrister-pwd"><i class="fas fa-lock"></i></label>
                         <input type="text" name="regrister-pwd" id="regrister-pwd" placeholder="Password">
                     </div>
                 </div>
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="regrister-confirm"><i class="fa fa-user"></i></label>
+                        <label for="regrister-confirm"><i class="fas fa-lock"></i></label>
                         <input type="text" name="regrister-confirm" id="regrister-confirm"
                                placeholder="Confirm Password">
                     </div>
                 </div>
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="regrister-email"><i class="fa fa-user"></i></label>
+                        <label for="regrister-email"><i class="fas fa-envelope"></i></label>
                         <input type="email" name="regrister-email" id="regrister-email" placeholder="Email">
                     </div>
                 </div>
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="location"><i class="fa fa-user"></i></label>
-                        <select name="location" id="location">
-                            <option value="1">Location 1
-                            </option>
-                            <option value="2">Location 2</option>
-                            <option value="3">Location 3</option>
+                        <label for="location"><i class="fas fa-map-marker-alt"></i></label>
+                        <select name="" id="location" class="test">
+                            <optgroup>
+                                <option value="" selected class="option-select">Your Location</option>
+
+                                <option value="1">Location 1</option>
+                                <option value="2">Location 2</option>
+                                <option value="3">Location 3</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>
                 <div class="input-container">
-                        <div class="terms">
-                            <input type="checkbox" name="terms" id=""><span>I've read and accept the terms of use</span>
+                    <div class="terms">
+                        <div class="checkboxes"><input type="checkbox" name="terms"></div>
+                        <span>I've read and accept the terms of use.</span>
                     </div>
                 </div>
                 <button type="submit"><a href="#">Sign Up</a></button>
@@ -73,16 +76,18 @@
                     </div>
                     <div class="input-container">
                         <div class="input-border">
-                            <label for="email-email"><i class="fa fa-user"></i></label>
+                            <label for="email-email"><i class="fas fa-envelope"></i></label>
                             <input type="email" name="email-email" id="email-email" placeholder="Your Email">
                         </div>
                     </div>
-                    <textarea placeholder="Type your message..."></textarea>
-                    <div class="terms">
-                        <input type="checkbox" name="terms"
-                               id="text-area"><span>I've read and accept the terms of use</span>
+                    <div class="input-container">
+                        <textarea placeholder="Type your message..."></textarea>
                     </div>
-                    <button type="submit">Send Email</button>
+                    <div class="terms">
+                        <div class="checkboxes"><input type="checkbox" name="terms" id="text-area"></div>
+                        <span>I've read and accept the terms of use.</span>
+                    </div>
+                    <button type="submit"><a href="#">Send Email</a></button>
                 </form>
             </div>
         </div>
@@ -99,15 +104,18 @@
                 </div>
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="sign-pwd"><i class="fa fa-user"></i></label>
+                        <label for="sign-pwd"><i class="fas fa-lock"></i></label>
                         <input type="text" name="sign-pwd" id="sign-pwd" placeholder="Password">
                     </div>
                 </div>
 
-                <div class="terms">
-                    <input type="checkbox" name=""><span>Remember me</span>
+                <div class="flex-center two-elements-submit">
+                    <div class="">
+                        <div class="checkboxes"><input type="checkbox" name=""></div>
+                        <span>Remember me</span>
+                    </div>
+                    <button type="submit" id="sign-in"><a href="#">Sign in</a></button>
                 </div>
-                <button type="submit">Sign in</button>
 
             </form>
         </div>
@@ -116,7 +124,7 @@
             <form action="" method="post">
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="sign-login"><i class="fa fa-user"></i></label>
+                        <label for="sign-login"><i class="fas fa-envelope"></i></label>
                         <input type="text" name="sign-login" placeholder="Enter your Email">
                     </div>
                 </div>
@@ -126,21 +134,25 @@
                         <input type="text" name="sign-pwd" placeholder="Enter your Phone number">
                     </div>
                 </div>
-                <button type="submit">Send</button>
-                <button disabled="disabled">Done</button>
+                <div class="two-elements-submit">
+                    <button type="submit"><a href="#">Send</a></button>
+                    <button disabled="disabled" class="button-disabled"><a href="#">Done</a></button>
+                </div>
             </form>
         </div>
         <div class="subscribe-form">
-            <h2>Recover Form</h2>
+            <h2>Subscribe Form</h2>
             <form action="" method="post">
                 <div class="input-container">
                     <div class="input-border">
-                        <label for="subscribe-email"><i class="fa fa-user"></i></label>
+                        <label for="subscribe-email"><i class="fas fa-envelope"></i></label>
                         <input type="text" name="subscribe-email" id="subscribe-email" placeholder="Enter your Email">
                     </div>
                 </div>
-                <button type="submit">Subscribe</button>
-                <button disabled="disabled">No, Thanks</button>
+                <div class="two-elements-submit">
+                    <button type="submit"><a href="#">Subscribe</a></button>
+                    <button type="submit" class="button-refuse"><a href="#">No, Thanks</a></button>
+                </div>
             </form>
         </div>
     </div>
