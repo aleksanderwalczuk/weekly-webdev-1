@@ -1,0 +1,174 @@
+$font-base: 'Open Sans', sans-serif
+$font-header: 'Roboto Slab', serif
+$full-width: 100%
+$body-bg: linear-gradient(45deg, rgba(29, 31, 47, 1) 0%, rgba(248, 78, 48, 0.99) 24%, rgba(246, 194, 116, 0.98) 48%, rgba(246, 191, 115, 0.98) 49%, rgba(241, 111, 91, 0.98) 78%, rgba(231, 84, 50, 0.98) 92%)
+$btn-gradient: linear-gradient(#A2D73F, #7FC520)
+$btn-disabled: linear-gradient(rgba(162, 215, 63, 0.4), rgba(127, 197, 32, 0.42))
+$input-border: #DEDEDE
+$form-shadow: rgba(0, 0, 0, 0.33)
+@mixin flexRow
+  display: flex
+  flex-direction: row
+
+@mixin flexCol
+  display: flex
+  flex-direction: column
+
+@mixin setCenter
+  justify-content: center
+  align-items: center
+
+@mixin checkbox-border
+  border: 1px solid #DEDEDE
+  border-radius: 0.25em
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  width: $full-width
+  height: $full-width
+  font-family: $font-base
+  font-size: 16px
+  background: $body-bg
+  main
+    @include flexRow
+
+div
+  h2
+    margin: 40px 0 20px 0
+    line-height: 50px
+    color: #fff
+    text-shadow: 0 1px 1px #000
+    text-align: center
+    font-family: $font-header
+
+.form-container
+  width: 420px
+  height: 1200px
+  margin: auto
+  div
+    width: 380px
+
+form
+  @include flexCol
+  background-color: #F4F4F4
+  box-shadow: 0 0 5px 20px $form-shadow
+  label > i
+    padding: 10px 20px
+    color: $input-border
+  .input-container
+    @include flexRow
+    @include setCenter
+    .input-border
+      width: 340px
+      margin: 10px 0
+      border: 1px solid #DEDEDE
+      border-radius: 0.5em
+      input
+        border-left: 1px solid #DEDEDE
+        border-radius: 0
+    div
+      @include flexRow
+      @include setCenter
+      background-color: #F6F6F6
+  .input-container:first-child
+    margin: 10px 0 0 0
+  input, select
+    width: 280px
+    height: 40px
+    background: none
+    border: none
+  input
+    padding: 18px
+  input[type=checkbox]
+    width: auto
+    height: auto
+    padding: 10px
+  input::placeholder, textarea::placeholder
+    font-size: 16px
+  .terms > input
+    margin: 0
+    width: auto
+    height: auto
+  select
+    height: 19px
+    padding: 0 14px 0 8px
+    border-radius: 0
+    -webkit-appearance: none
+  //here should be lines 129->132
+  //styling select btn in Chrome
+  textarea
+    width: 340px
+    height: 200px
+    margin: 10px 0 10px 0
+    padding: 10px
+    background: #F6F6F6
+    @include checkbox-border
+  button
+    background: $btn-gradient
+    border: 1px solid rgba(80, 172, 0, 0.41)
+    border-radius: 0.75em
+    a
+      width: 100%
+      height: 100%
+      text-decoration: none
+      font-size: 18px
+      color: #fff
+      text-shadow: 0 1px 1px #000
+  button[disabled=disabled]
+    background: linear-gradient(rgba(162, 215, 63, 0.4), rgba(127, 197, 32, 0.42))
+    color: rgba(255, 255, 255, 0.4)
+  button.button-refuse
+    background: linear-gradient(#F66D7C, #F13847)
+    border: 1px solid #B7132A
+  button#sign-in
+    width: 140px
+    height: 40px
+    margin: 0 20px 0 0
+  button:nth-child(5), button:nth-child(7)
+    width: 340px
+    height: 50px
+    margin: 10px auto 15px
+  div.terms
+    @include flexRow
+    justify-content: flex-start
+    width: 340px
+    margin: auto
+
+    div
+      @include flexRow
+      @include setCenter
+      width: 20px
+      height: 20px
+      @include checkbox-border
+      input
+        margin: 0
+        width: auto
+        height: auto
+  span
+    margin: 0 0 0 10px
+    font-size: 16px
+  .flex-center
+    @include flexRow
+    @include setCenter
+    div
+      .checkboxes
+        width: 20px
+        height: 20px
+        @include checkbox-border
+        margin: 0
+  .two-elements-submit
+    @include flexRow
+    justify-content: space-around
+    margin: 5px 0 20px
+    div
+      @include flexRow
+      align-items: center
+      height: 40px
+      width: 200px
+      margin: 0 0 0 20px
+    button
+      width: 150px
+      height: 40px

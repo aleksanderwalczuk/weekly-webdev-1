@@ -15,6 +15,7 @@
   "author": "Alexander Walczuk",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {}
