@@ -18,5 +18,7 @@
     "bootstrap": "^4.3.1",
     "normalize.css": "^8.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jquery": "^3.3.1"
+  }
 }

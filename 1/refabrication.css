@@ -1,3 +1,20 @@
+@keyframes onactive {
+    from {
+        outline-color: #DEDEDE;
+    }
+    to {
+        outline-color: #7FC520;
+    }
+}
+
+@keyframes active-label {
+    from {
+        color: #DEDEDE;
+    }
+    to {
+        color: #969696;
+    }
+}
 * {
   box-sizing: border-box;
 }
@@ -12,7 +29,6 @@ body {
 }
 body main {
   display: flex;
-  flex-direction: row;
 }
 
 div h2 {
@@ -39,6 +55,22 @@ form {
   background-color: #F4F4F4;
   box-shadow: 0 0 5px 20px rgba(0, 0, 0, 0.33);
 }
+
+form label {
+    display: block;
+    position: relative;
+    line-height: 10px;
+}
+
+form label:after {
+    position: absolute;
+    content: " ";
+    height: 80%;
+    width: 2px;
+    border-right: 1px solid #DEDEDE;
+    right: 0;
+    top: 10%;
+}
 form label > i {
   padding: 10px 20px;
   color: #DEDEDE;
@@ -49,15 +81,15 @@ form .input-container {
   justify-content: center;
   align-items: center;
 }
+
+form .input-container:first-child {
+    margin: 10px 0 0 0;
+}
 form .input-container .input-border {
   width: 340px;
   margin: 10px 0;
   border: 1px solid #DEDEDE;
   border-radius: 0.5em;
-}
-form .input-container .input-border input {
-  border-left: 1px solid #DEDEDE;
-  border-radius: 0;
 }
 form .input-container div {
   display: flex;
@@ -66,36 +98,76 @@ form .input-container div {
   align-items: center;
   background-color: #F6F6F6;
 }
-form .input-container:first-child {
-  margin: 10px 0 0 0;
-}
 form input, form select {
   width: 280px;
-  height: 40px;
+    height: 38px;
   background: none;
   border: none;
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
 }
-form input {
-  padding: 18px;
+
+form input[type=text], form input[type=email] {
+    padding: 0 20px;
 }
 form input[type=checkbox] {
   width: auto;
   height: auto;
   padding: 10px;
+    margin: auto;
 }
-form input::placeholder, form textarea::placeholder {
+
+form input[type=checkbox]:checked {
+    background-color: #7FC520;
+}
+
+form input::placeholder, form textarea::placeholder, form select, form select#location.test {
   font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #979797;
+    height: 38px;
 }
 form .terms > input {
   margin: 0;
   width: auto;
   height: auto;
 }
+
+form input, form textarea {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-name: onactive;
+    animation-play-state: running;
+    outline-color: #7FC520;
+    -moz-outline-radius: 0.25em;
+}
+
+form .label-focus {
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-name: active-label;
+    animation-play-state: running;
+    color: #969696;
+}
 form select {
   height: 19px;
   padding: 0 14px 0 8px;
   border-radius: 0;
   -webkit-appearance: none;
+}
+
+form select#location.test {
+    padding: 0 20px;
+}
+
+form select:after {
+    font-family: "Font Awesome 5 Free";
+    content: "f0d7";
 }
 form textarea {
   width: 340px;
@@ -155,7 +227,6 @@ form div.terms div {
   border-radius: 0.25em;
 }
 form div.terms div input {
-  margin: 0;
   width: auto;
   height: auto;
 }
@@ -193,6 +264,24 @@ form .two-elements-submit div {
 form .two-elements-submit button {
   width: 150px;
   height: 40px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+footer span {
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width: 959px) {
+    body main {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /*# sourceMappingURL=refabrication.css.map */

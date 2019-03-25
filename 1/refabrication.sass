@@ -22,6 +22,18 @@ $form-shadow: rgba(0, 0, 0, 0.33)
   border: 1px solid #DEDEDE
   border-radius: 0.25em
 
+@keyframes onactive
+  from
+    outline-color: $input-border
+  to
+    outline-color: #7FC520
+
+@keyframes active-label
+  from
+    color: $input-border
+  to
+    color: #969696
+
 *
   box-sizing: border-box
 
@@ -33,7 +45,7 @@ body
   font-size: 16px
   background: $body-bg
   main
-    @include flexRow
+    display: flex
 
 div
   h2
@@ -55,48 +67,89 @@ form
   @include flexCol
   background-color: #F4F4F4
   box-shadow: 0 0 5px 20px $form-shadow
+  label
+    display: block
+    position: relative
+    line-height: 10px
+  label:after
+    position: absolute
+    content: ' '
+    height: 80%
+    width: 2px
+    border-right: 1px solid $input-border
+    right: 0
+    top: 10%
   label > i
     padding: 10px 20px
     color: $input-border
   .input-container
     @include flexRow
     @include setCenter
+    &:first-child
+      margin: 10px 0 0 0
     .input-border
       width: 340px
       margin: 10px 0
       border: 1px solid #DEDEDE
       border-radius: 0.5em
-      input
-        border-left: 1px solid #DEDEDE
-        border-radius: 0
     div
       @include flexRow
       @include setCenter
       background-color: #F6F6F6
-  .input-container:first-child
-    margin: 10px 0 0 0
   input, select
     width: 280px
-    height: 40px
+    height: 38px
     background: none
     border: none
-  input
+    -webkit-padding-start: 0
+    -webkit-padding-end: 0
+  //input
     padding: 18px
+  input[type=text], input[type=email]
+    padding: 0 20px
   input[type=checkbox]
     width: auto
     height: auto
     padding: 10px
-  input::placeholder, textarea::placeholder
+    margin: auto
+  input[type=checkbox]:checked
+    background-color: #7FC520
+  input::placeholder, textarea::placeholder, select, select#location.test
     font-size: 16px
+    font-family: $font-base
+    color: #979797
+    height: 38px
   .terms > input
     margin: 0
     width: auto
     height: auto
+  input, textarea
+    font-size: 16px
+    font-family: $font-base
+  input, textarea, select
+    &:focus
+      animation-duration: 300ms
+      animation-iteration-count: 1
+      animation-name: onactive
+      animation-play-state: running
+      outline-color: #7FC520
+      -moz-outline-radius: 0.25em
+  .label-focus
+    animation-duration: 300ms
+    animation-iteration-count: 1
+    animation-name: active-label
+    animation-play-state: running
+    color: #969696
   select
     height: 19px
     padding: 0 14px 0 8px
     border-radius: 0
     -webkit-appearance: none
+  select#location.test
+    padding: 0 20px
+  select:after
+    font-family: "Font Awesome 5 Free"
+    content: "f0d7"
   //here should be lines 129->132
   //styling select btn in Chrome
   textarea
@@ -144,7 +197,6 @@ form
       height: 20px
       @include checkbox-border
       input
-        margin: 0
         width: auto
         height: auto
   span
@@ -172,3 +224,15 @@ form
     button
       width: 150px
       height: 40px
+
+footer
+  @include flexRow
+  justify-content: flex-end
+  span
+    color: white
+    padding: 20px
+
+@media (max-width: 959px)
+  body
+    main
+      @include flexCol

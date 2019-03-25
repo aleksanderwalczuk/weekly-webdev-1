@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <!--load all styles -->
 </head>
 <body>
@@ -46,13 +47,10 @@
                     <div class="input-border">
                         <label for="location"><i class="fas fa-map-marker-alt"></i></label>
                         <select name="" id="location" class="test">
-                            <optgroup>
                                 <option value="" selected class="option-select">Your Location</option>
-
                                 <option value="1">Location 1</option>
                                 <option value="2">Location 2</option>
                                 <option value="3">Location 3</option>
-                            </optgroup>
                         </select>
                     </div>
                 </div>
@@ -150,7 +148,7 @@
                 <div class="input-container">
                     <div class="input-border">
                         <label for="subscribe-email"><i class="fas fa-envelope"></i></label>
-                        <input type="text" name="subscribe-email" id="subscribe-email" placeholder="Enter your Email">
+                        <input type="email" name="subscribe-email" id="subscribe-email" placeholder="Enter your Email">
                     </div>
                 </div>
                 <div class="two-elements-submit">
@@ -161,6 +159,9 @@
         </div>
     </div>
 </main>
+<footer>
+    <span>&copy; rednaxela 700</span>
+</footer>
 </body>
 
 </html>
