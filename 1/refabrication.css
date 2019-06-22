@@ -6,7 +6,6 @@
         outline-color: #7FC520;
     }
 }
-
 @keyframes active-label {
     from {
         color: #DEDEDE;
@@ -20,19 +19,51 @@
 }
 
 body {
+    display: block;
   margin: 0;
   width: 100%;
   height: 100%;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  background: linear-gradient(45deg, #1d1f2f 0%, rgba(248, 78, 48, 0.99) 24%, rgba(246, 194, 116, 0.98) 48%, rgba(246, 191, 115, 0.98) 49%, rgba(241, 111, 91, 0.98) 78%, rgba(231, 84, 50, 0.98) 92%);
+    background: url("bg.png");
+    background-size: cover;
+}
+
+body header.header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 50px 0 0 0;
+}
+
+body header.header div {
+    margin: 0;
+}
+
+body header.header .logo-top img, body header.header .logo-round-top img {
+    display: block;
+    opacity: 0.4;
+}
+
+body header.header .logo-top {
+    align-self: center;
+}
+
+body header.header .logo-top img {
+    height: 80px;
+    margin: 0 0 0 10px;
+}
+
+body header.header .logo-round-top img {
+    height: 110px;
 }
 body main {
   display: flex;
+    padding: 0 75px;
 }
 
 div h2 {
-  margin: 40px 0 20px 0;
+    margin: 20px 0 10px 0;
   line-height: 50px;
   color: #fff;
   text-shadow: 0 1px 1px #000;
@@ -41,7 +72,6 @@ div h2 {
 }
 
 .form-container {
-  width: 420px;
   height: 1200px;
   margin: auto;
 }
@@ -54,14 +84,13 @@ form {
   flex-direction: column;
   background-color: #F4F4F4;
   box-shadow: 0 0 5px 20px rgba(0, 0, 0, 0.33);
+    border-radius: 0.25em;
 }
-
 form label {
     display: block;
     position: relative;
     line-height: 10px;
 }
-
 form label:after {
     position: absolute;
     content: " ";
@@ -81,7 +110,6 @@ form .input-container {
   justify-content: center;
   align-items: center;
 }
-
 form .input-container:first-child {
     margin: 10px 0 0 0;
 }
@@ -107,8 +135,16 @@ form input, form select {
     -webkit-padding-end: 0;
 }
 
-form input[type=text], form input[type=email] {
+form input[type=email] {
+    background: #F6F6F6;
+}
+
+form input[type=text], form input[type=email], form input[type=password] {
     padding: 0 20px;
+}
+
+form input[type=text]:-webkit-autofill, form input[type=email]:-webkit-autofill, form input[type=password]:-webkit-autofill {
+    background-color: #7FC520;
 }
 form input[type=checkbox] {
   width: auto;
@@ -116,11 +152,13 @@ form input[type=checkbox] {
   padding: 10px;
     margin: auto;
 }
-
 form input[type=checkbox]:checked {
     background-color: #7FC520;
 }
 
+form input[type=checkbox]:checked:hover, form input[type=checkbox]:checked :focus, form input[type=checkbox]:checked :active {
+    background-color: #7FC520;
+}
 form input::placeholder, form textarea::placeholder, form select, form select#location.test {
   font-size: 16px;
     font-family: "Open Sans", sans-serif;
@@ -132,12 +170,14 @@ form .terms > input {
   width: auto;
   height: auto;
 }
-
 form input, form textarea {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
 }
 
+form input:-webkit-autofill, form textarea:-webkit-autofill {
+    background-color: #DEDEDE;
+}
 form input:focus, form textarea:focus, form select:focus {
     animation-duration: 300ms;
     animation-iteration-count: 1;
@@ -146,7 +186,6 @@ form input:focus, form textarea:focus, form select:focus {
     outline-color: #7FC520;
     -moz-outline-radius: 0.25em;
 }
-
 form .label-focus {
     animation-duration: 300ms;
     animation-iteration-count: 1;
@@ -160,11 +199,9 @@ form select {
   border-radius: 0;
   -webkit-appearance: none;
 }
-
 form select#location.test {
     padding: 0 20px;
 }
-
 form select:after {
     font-family: "Font Awesome 5 Free";
     content: "f0d7";
@@ -271,7 +308,6 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
 }
-
 footer span {
     color: white;
     padding: 20px;
